@@ -1,138 +1,171 @@
 /*
   1. Use a more-intuitive box-sizing model.
 */
-*, *::before, *::after {
-   box-sizing: border-box;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
+
 /*
   2. Remove default margin
 */
 * {
   margin: 0;
 }
+
 /*
   3. Allow percentage-based heights in the application
 */
-html, body {
+html,
+body {
   height: 100%;
 }
+
 /*
   Typographic tweaks!
   4. Add accessible line-height
   5. Improve text rendering
 */
 body {
- 
+
   -webkit-font-smoothing: antialiased;
 }
+
 /*
   6. Improve media defaults
 */
-img, picture, video, canvas, svg {
+img,
+picture,
+video,
+canvas,
+svg {
   display: block;
   max-width: 100%;
 }
+
 /*
   7. Remove built-in form typography styles
 */
-input, button, textarea, select {
+input,
+button,
+textarea,
+select {
   font: inherit;
 }
+
 /*
   8. Avoid text overflows
 */
-p, h1, h2, h3, h4, h5, h6 {
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   overflow-wrap: break-word;
 }
+
 /*
   9. Create a root stacking context
 */
-#root, #__next {
+#root,
+#__next {
   isolation: isolate;
 }
 
 /* === END OF CSS RESET === */
 
 :root {
-   /* semantic naming */
-   --primary-200: hsl(193, 38%, 86%);
-   --primary-400: hsl(150, 100%, 66%);
+  /* semantic naming */
+  --primary-200: hsl(193, 38%, 86%);
+  --primary-400: hsl(150, 100%, 66%);
 
-   --neutral-400: hsl(217, 19%, 38%);
-   --neutral-500: hsl(217, 19%, 24%);
-   --neutral-600: hsl(218, 23%, 16%);
-   
-   /* contextual naming */
-   --text: var(--primary-200);
-   --text-accent: var(--primary-400);
-   --surface: var(--neutral-400);
-   --surface-darker: var(--neutral-500);
-   --surface-darkest: var(--neutral-600)
+  --neutral-400: hsl(217, 19%, 38%);
+  --neutral-500: hsl(217, 19%, 24%);
+  --neutral-600: hsl(218, 23%, 16%);
+
+  /* contextual naming */
+  --text: var(--primary-200);
+  --text-accent: var(--primary-400);
+  --surface: var(--neutral-400);
+  --surface-darker: var(--neutral-500);
+  --surface-darkest: var(--neutral-600)
 }
 
 body {
-   font-family: 'Manrope', sans-serif;
-   background-color: var(--surface-darkest);
-   color: var(--primary-200);
+  font-family: 'Manrope', sans-serif;
+  background-color: var(--surface-darkest);
+  color: var(--primary-200);
 
-   display: flex;
-   justify-content: center;
-   align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .container {
-   background-color: var(--surface-darker);
-   text-align: center;
-   padding: 50px 25px;
-   max-width: 350px;
-   border-radius: 1rem;
+  background-color: var(--surface-darker);
+  text-align: center;
+  padding: 50px 25px;
+  max-width: 350px;
+  min-width: 300px;
+  margin: 0 auto;
+  border-radius: 1rem;
 
-   display: flex;
-   flex-direction: column;
-   justify-content: space-between;
-   align-items: center;
-   gap: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 25px;
 
-   position: relative;
+  position: relative;
 }
 
 h1 {
-   color: var(--text-accent);
-   text-transform: uppercase;
-   font-size: 11px;
-   letter-spacing: 4px;
+  color: var(--text-accent);
+  text-transform: uppercase;
+  font-size: 11px;
+  letter-spacing: 4px;
 }
 
 #advice-text {
-   font-size: 22px;
+  font-size: 22px;
+}
+
+#advice-text::before {
+  content: '\201C';
+}
+
+#advice-text::after {
+  content: '\201D';
 }
 
 picture {
-   margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 button {
-   background-color: var(--text-accent);
-   border: transparent;
-   border-radius: 50%;
-   padding: 20px;
-   margin: 20px;
-   cursor: pointer;
+  background-color: var(--text-accent);
+  border: transparent;
+  border-radius: 50%;
+  padding: 20px;
+  margin: 20px;
+  cursor: pointer;
 
-   transition: filter 0.3s ease-in-out;
+  transition: filter 0.3s ease-in-out;
 }
 
 .btn {
-   bottom: -50px;
-   position: absolute;
-   left: 50%;
-   transform: translateX(-48%);
+  bottom: -50px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-48%);
 }
 
 button:hover {
-   filter: brightness(120%);
+  filter: brightness(120%);
 }
 
 svg {
-   fill: var(--text);
+  fill: var(--text);
 }
